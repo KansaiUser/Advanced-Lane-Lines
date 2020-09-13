@@ -77,11 +77,11 @@ The project uses computer vision techniques to achieve its objective. This proje
 ## Camera Calibration
 
 Notebooks: 
-- MyCameraCalibration.ipynb
-- SavingUndistortParameters.ipynb
+- [CameraCalibration.ipynb](code/MyCameraCalibration.ipynb)
+- [SavingUndistortParameters.ipynb](code/SavingUndistortParameters.ipynb)
 
 Libraries
-- my_camera_cal.py
+- [my_camera_cal.py](code/scripts/my_camera_cal.py)
 
 The camera calibration functions can be found on the file ``my_camera_cal.py`` and are the following:
 
@@ -108,11 +108,11 @@ From now on I explain how I process images (the "pipeline")
 ## Undistorting an image
 
 Notebooks:
-- usingSavedParameters.ipynb
-- Undistort_Roads.ipynb
+- [usingSavedParameters.ipynb](code/usingSavedParameters.ipynb)
+- [Undistort_Roads.ipynb](code/Undistort_Roads.ipynb)
 
 Libraries
-- my_camera_cal.py
+- [my_camera_cal.py](code/scripts/my_camera_cal.py)
 
 As a first example in the ``usingSavedParameters.ipynb`` notebook I do a similar undistortion as previously but now instead of calculating the points with ``find_points`` which takes time, I used the function ``readValuesToUndistort`` which is much more practical when we do frames processing
 
@@ -131,13 +131,13 @@ Using the same technique I process a road image in the ``Undistort_Roads.ipynb``
 ## Thresholding an image
 
 Notebooks:
-- Color_and_Gradient-3.ipynb
+- [Color_and_Gradient-3.ipynb](code/Color_and_Gradient-3.ipynb)
 
 Libraries
-- my_camera_cal.py
-- my_pipeline.py
-- my_color_thresh.py
-- my_sobel_thresh.py
+- [my_camera_cal.py](code/scripts/my_camera_cal.py)
+- [my_pipeline.py](code/scripts/my_pipeline.py)
+- [my_color_thresh.py](code/scripts/my_color_thresh.py)
+- [my_sobel_thresh.py](code/scripts/my_sobel_thresh.py)
 
 Next, and once I have an undistorted image, I had to apply some thresholding to the image. To do this in the ``Color_and_Gradient-3.ipynb`` I read an image (say ``test6.jpg``) and undistort it. Once I have this undistorted image, I use the ``pipeline`` function found in the ``my_pipeline.py`` file to get a color binary and a combined binary images
 
@@ -162,11 +162,11 @@ Then I applied the ``HLScolor_thresh`` function (found in the ``my_color_thresh.
 ## Perspective Transformation
 
 Notebooks:
-- Perspective_change.ipynb
+- [Perspective_change.ipynb](code/Perspective_change.ipynb)
 
 Libraries:
-- my_camera_cal.py
-- my_pipeline.py
+- [my_camera_cal.py](code/scripts/my_camera_cal.py)
+- [my_pipeline.py](code/scripts/my_pipeline.py)
 
 After doing the previous processing and having a thresholding image, I applied the ``image_perspective`` function (found in the ``my_camera_cal.py`` file) 
 
@@ -189,11 +189,11 @@ In the ``image_prespective`` function, I just applied OpenCV's *getPerspectiveTr
 ## Lane Line Finding
 
 Notebooks:
-- Tracking_Lanes3.ipynb
-- Tracking_Lanes_Operation.ipynb
+- [Tracking_Lanes3.ipynb](code/Tracking_Lanes3.ipynb)
+- [Tracking_Lanes_Operation.ipynb](code/Tracking_Lanes_Operation.ipynb)
 
 Libraries:
-- my_line_finding.py
+- [my_line_finding.py](code/scripts/my_line_finding.py)
 
 Here I have developed two ways of finding lanes. Both are defined in the ``my_line_finding.py`` file. One works on scratch from an image with the function ``fit_polynomial``. The other one takes into account the previous fit polynomials to get the new ones, in the function ``search_around_poly``. 
 
@@ -218,11 +218,11 @@ The ``search_around_poly`` function uses a similar approach. First it finds the 
 ## Projecting back to the camera view
 
 Notebooks:
-- Solution_Book1.ipynb
+- [Solution_Book1.ipynb](code/Solution_Book1.ipynb)
 
 
 Libraries:
-- my_process.py
+- [my_process.py](code/scripts/my_process.py)
 
 Once I have done the previous steps, it is time to project the found lanes to the camera view ("the world"). You can find this processing in the ``Solution_Book1.ipynb`` notebook. 
 
@@ -245,11 +245,11 @@ The ``process`` function that I used is found in the ``my_process.py`` file. It 
 ## Curvature and Vehicle Position
 
 Notebooks:
-- Solution_Book2.ipynb
+- [Solution_Book2.ipynb](code/Solution_Book2.ipynb)
 
 
 Libraries:
-- my_process.py
+- [my_process.py](code/scripts/my_process.py)
 
 In the ``Solution_Book2.ipynb`` I added to the previous solution book the calculation of the curvature and the vehicle position. For the curvature I used the ``measure_curvature_pixels`` function found on the ``my_process.py`` file which is applying the *radius of curvature* equation:
 
@@ -276,10 +276,10 @@ For the vehicle position I used the function ``calc_vehicle_pos`` written in the
 ## The process applied to the test video
 
 Notebooks:
-- VideoProcessing1.ipynb
+- [VideoProcessing1.ipynb](code/VideoProcessing1.ipynb)
 
 Libraries
-- my_process.py
+- [my_process.py](code/my_process.py)
 
 As the final step of this project and to apply all of what I have written above, I used the process on the frames of the project_video. You can see the results on the ``output_video`` folder on the file ``project_video_out.mp4``
 (There is also a csv file which is the log of the fit lanes)
