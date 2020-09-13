@@ -13,8 +13,8 @@ from scripts.my_sobel_thresh import dir_threshold
 
 def pipeline(img, channel='s', color_thresh=(110, 255), orient='x',sobel_thresh=(20, 100)):
     
-    # We are considering here only X and Y abs sobel threshold. Expand this if you want to incorporate the maginitude or direction ones    
-    #grad_sobel = abs_sobel_thresh(img, orient=orient, sobel_thresh)
+    # We are considering here only X and Y abs sobel threshold.     
+    
     grad_sobel = abs_sobel_thresh(img, orient=orient, thresh=sobel_thresh)
     
     #binary_color=HLScolor_thresh(img,channel,color_thresh)

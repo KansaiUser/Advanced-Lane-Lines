@@ -57,7 +57,7 @@ def undistort(image,objpoints,imgpoints):
 def saveValuesToUndistort(objpoints,imgpoints,img_size,filename):
     # Do camera calibration given object points and image points
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img_size,None,None)
-    # Save the camera calibration result for later use (we won't worry about rvecs / tvecs)
+    # Save the camera calibration result for later use 
     dist_pickle = {}
     dist_pickle["mtx"] = mtx
     dist_pickle["dist"] = dist
