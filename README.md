@@ -94,7 +94,7 @@ The camera calibration functions can be found on the file ``my_camera_cal.py`` a
 
 The way to use this can be found in the notebook ``MyCameraCalibration.ipynb``.
 
-``find_points`` finds the object points and the image points necessary to undistort an image. To do this, it applies OpenCV's ```findChessboardCorners`` function to all the chessboard calibrating images in the ``camera_cal`` folder. 
+``find_points`` finds the object points and the image points necessary to undistort an image. To do this, it applies OpenCV's ``findChessboardCorners`` function to all the chessboard calibrating images in the ``camera_cal`` folder. 
 
 Then it applies the function ``undistort`` to the images. As an example for the image ``calibration12.jpg`` we can see:
 
